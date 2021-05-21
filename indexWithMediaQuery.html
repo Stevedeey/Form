@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+        <style>
+            @media(min-width:786px)
+            {
+                .container {
+               display: flex;
+               /* align-items: flex-start; the flexItem with the least content aligns to the start of flex(up)
+               /* align-items: flex-end; the flexItem with the least content aligns to the end of flex(up)
+               /* align-items: center; */
+              /* flex-direction: column; If I want the items to render in column*/
+            }
+            .container2{
+                display: flex;
+                /* justify-content: flex-start; this is the default 
+                justify-content: flex-end;
+                 justify-content: space-evenly;
+                 justify-content: space-around;
+                */
+                justify-content: space-between;
+            }
+            }
+            .container3{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+
+            /* The arrangement above will make the contents have issues on mobile devices so my 
+            second example file uses media query to settle it */
+
+
+            /* First Container Starts */
+            .container div, .container2 div, .container3 div{
+                border: 1px solid #abd;
+                padding: 10px;
+            }
+            .box1{
+                flex: 2;
+                order:2;
+            }
+            .box2{
+                flex: 1;
+                order:1;
+            }
+            .box3{
+                flex: 1;
+                order:3;
+            }
+             /* First Container ends */
+
+             /* Container 2 starts */
+             .container2-box{
+                 /* width:30%; using width in this context is cool, 
+                 but we can use flex-basis to make it more flexy */
+                 flex-basis: 30%;
+
+             }
+             /* Container 3 starts */
+             .container3-box{
+                 flex-basis: 12%;
+
+             }
+
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <h3>Box 1</h3>
+            <p>Some content of paragraph 1
+                Lets allow 
+                box 1 to
+            </p>
+        </div>
+        <div class="box2">
+            <h3>Box2</h3>
+            <p>Some content of paragraph 2. Lets allow 
+                box 2 to have more contents 
+            </p>
+        </div>
+        <div class="box3">
+            <h3>Box3</h3>
+            <p>Some content of paragraph 3. Lets allow 
+                box 2 to have more contents</p>
+        </div>
+
+    </div>
+
+   <div class="container2">
+       <div class="container2-box">
+           <h3>Box 4</h3>
+           <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in 
+               laying out print, graphic or web designs. The passage is attributed to an
+                unknown typesetter in the 15th century</p>
+       </div>
+       <div class="container2-box">
+        <h3>Box 5</h3>
+        <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in 
+            laying out print, graphic or web designs. The passage is attributed to an
+             unknown typesetter in the 15th century</p>
+    </div>
+   
+    <div class="container2-box">
+        <h3>Box 6</h3>
+        <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in 
+            laying out print, graphic or web designs. The passage is attributed to an
+             unknown typesetter in the 15th century</p>
+    </div>
+</div>
+
+    <!-- Demonstrating Wrapping -->
+   
+      
+    <div class="container3">
+        <div class="container3-box">
+            <h3>Box 7</h3>
+            <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in 
+                laying out print, graphic or web designs. The passage is attributed to an
+                 unknown typesetter in the 15th century</p>
+        </div>
+        <div class="container3-box">
+         <h3>Box 8</h3>
+         <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in 
+             laying out print, graphic or web designs. The passage is attributed to an
+              unknown typesetter in the 15th century</p>
+     </div>
+    
+     <div class="container3-box">
+         <h3>Box 9</h3>
+         <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in 
+             laying out print, graphic or web designs. The passage is attributed to an
+              unknown typesetter in the 15th century</p>
+     </div>
+     <div class="container3-box">
+        <h3>Box 10</h3>
+        <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in 
+            laying out print, graphic or web designs. The passage is attributed to an
+             unknown typesetter in the 15th century</p>
+    </div>
+    <div class="container3-box">
+     <h3>Box 11</h3>
+     <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in 
+         laying out print, graphic or web designs. The passage is attributed to an
+          unknown typesetter in the 15th century</p>
+ </div>
+
+ <div class="container3-box">
+     <h3>Box 12</h3>
+     <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in 
+         laying out print, graphic or web designs. The passage is attributed to an
+          unknown typesetter in the 15th century</p>
+ </div>
+ </div>
+ 
+  
+
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Example</title>
+    <style>
+        .container{
+            
+            margin-right: auto;
+            margin-left: auto;
+            background: #ccc;
+            padding: 10px;
+           
+        }
+        .form-container{
+            width:40%;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 30px;
+            background: white;
+            padding: 10px;
+        }
+            .form-row{
+                padding: 10px 0;
+                display: flex;
+            }
+            .form-row label{
+                padding-right: 10px;
+
+            }
+            .form-row input{
+                flex:1;
+
+            }
+            /* MAIN */
+            @media(min-width:786px){
+            .section2-container{
+                display: flex;
+                
+               flex-wrap: wrap;
+            }
+            .main{
+                flex:2;
+                order: 2;
+              
+            }
+            .sidebar1{
+                flex:1;
+                order: 1;
+            }
+            .sidebar2{
+                flex:1;
+                order: 3;
+            }
+            }
+            /* Main on all SCREENS */
+            .section2-container div{
+                padding: 10px;
+            }
+            .section2-container{
+                background: white;
+                text-align: justify;
+            }
+
+            /* Call-out section  */
+            .section3-container{
+               max-width: 1400px;
+                margin: 40px auto 0 auto;
+            }
+            .call-out{
+                padding: 20px;
+                margin-bottom: 30px;
+                /* flex:1px;   This allows us to achieve egual width for the boxes  */
+                /* margin-right: 40px;  This could have solved the problem of extra margin the thrid box has */
+                box-sizing: border-box;
+                flex-basis:30%;
+                max-width: 1400px;
+               
+
+            }
+
+            /*Media query for section 3*/
+            @media(min-width:900px)
+            {
+                .section3-container
+                {
+                display: flex;
+                /* Force the boxes have height according tothe content of each box*/
+                /* align-items: flex-start; */
+                justify-content: space-between;
+                }
+            }
+            /* .call-out:last-child{
+                /* margin-right: 0; 
+            } */
+
+            .call-out:nth-child(1){background-color: aquamarine;}
+            .call-out:nth-child(2){background-color:cadetblue;}
+            .call-out:nth-child(3){background-color: purple;}
+
+            /* ---SECTION 4--- */
+            .section4-container
+            {
+                max-width: 1400px;
+                margin: 40px auto 0 auto;
+                background-color: #fff;
+                padding: 30px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+            .inner{
+                width: 150px;
+                height: 100px;
+                line-height: 30px;
+                background-color: brown;
+                color: white;
+                text-align: center;
+                font-size: 60px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+            /* Section five */
+            .section5-container{
+                max-width: 700px;
+                height: 400px;
+                margin: 40px auto 40px auto; 
+                background: #2a2a2a;
+                display: flex;
+
+            }
+            .center-me{
+                color: white;
+                font-size:50px;
+                margin: auto;
+                
+            }
+            /* Section 6 */
+
+            .section6-container-equal-height
+            {
+                max-width: 900px;
+                margin: 0 auto;
+                display: flex;
+            }
+            .first{
+                background: white;
+                padding:20px;
+                flex: 1;
+            }
+            .second{
+                background-color: yellow;
+                flex: 1;
+                display: flex; /* Given that this box is a flex child, it is also a parent here for A and B. This line causes the children to be flexed too  */
+                flex-direction: column;
+                
+            }
+            .second-a
+            {
+                background-color: #c0dbe2;
+                flex: 1;
+            }
+            .second-b
+            {
+                background-color: #cdf1c3;
+                flex: 1;
+            }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Form -->
+        <div class="form-container">
+            <form action="">
+                 <div class="form-row">
+                     <label for="">
+                         Name:
+                     </label>
+                     <input type="" id="name">
+                 </div>
+                 <div class="form-row">
+                     <label for="">Password:</label>
+                     <input type="text">
+     
+                 </div>
+     
+            </form>
+     
+         </div>
+         <!-- Section2 -->
+         <div class="section2-container">
+             <div class="main">
+                 <h3>Main Column</h3>
+                 <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia consectetur metus. 
+                    Sed sollicitudin id sem a volutpat.
+                     Nullam et iaculis est, eget euismod nibh. Etiam placerat faucibus orci ac efficitur
+                 </p>
+                 <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia consectetur metus. 
+                    Sed sollicitudin id sem a volutpat.
+                     Nullam et iaculis est, eget euismod nibh. Etiam placerat faucibus orci ac efficitur
+                 </p>
+                 <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia consectetur metus. 
+                    Sed sollicitudin id sem a volutpat.
+                     Nullam et iaculis est, eget euismod nibh. Etiam placerat faucibus orci ac efficitur
+                 </p>
+                 <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia consectetur metus. 
+                    Sed sollicitudin id sem a volutpat.
+                     Nullam et iaculis est, eget euismod nibh. Etiam placerat faucibus orci ac efficitur
+                 </p>
+             </div>
+
+             <div class="sidebar1">
+                <h3>Sidebar 1</h3>
+                <p>
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia consectetur metus. 
+                   Sed sollicitudin id sem a volutpat.
+                </p>
+            </div>
+
+            <div class="sidebar2">
+                <h3>Sidebar 2</h3>
+                <p>
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia consectetur metus. 
+                   Sed sollicitudin id sem a volutpat.
+                </p>
+            </div>
+
+
+         </div>
+         <!-- Section 3 -->
+       <div class="section3-container">
+           <div class="call-out">
+               <h4>Head 1</h4>
+               <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia consectetur 
+                metus. Sed sollicitudin id sem a volutpat. Nullam et iaculis est, eget euismod nibh.
+               </p>
+           </div>
+           <div class="call-out">
+            <h4>Head 2</h4>
+            <p>
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia consectetur 
+             metus. Sed sollicitudin id sem a volutpat. 
+            </p>
+        </div>
+        <div class="call-out">
+            <h4>Head 3</h4>
+            <p>
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia consectetur 
+             metus. Sed s
+            </p>
+        </div>
+       </div>
+
+       <div class="section4-container">
+           <div class="inner">
+               <p>1</p>
+           </div>
+           <div class="inner">
+            <p>2</p>
+        </div>
+        <div class="inner">
+            <p>3</p>
+        </div>
+        <div class="inner">
+            <p>4</p>
+        </div>
+        <div class="inner">
+            <p>5</p>
+        </div>
+       </div>
+
+       <div class="section5-container">
+           <div class="center-me">Center Me Please!</div>
+       </div>
+
+       <div class="section6-container-equal-height">
+           <div class="first">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Sed mollis ligula in mattis consectetur. Nulla eros sem, efficitur sit amet tincidunt at, 
+                rhoncus eget tortor. Integer a lacus nunc.
+               </p>
+               <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Sed mollis ligula in mattis consectetur. Nulla eros sem, efficitur sit amet tincidunt at, 
+                rhoncus eget tortor. Integer a lacus nunc.
+               </p>
+               <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Sed mollis ligula in mattis consectetur. Nulla eros sem, efficitur sit amet tincidunt at, 
+                rhoncus eget tortor. Integer a lacus nunc.
+               </p>
+               <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Sed mollis ligula in mattis consectetur. Nulla eros sem, efficitur sit amet tincidunt at, 
+                rhoncus eget tortor. Integer a lacus nunc.
+               </p>
+           </div>
+           <div class="second">
+               <div class="second-a">
+                   A
+               </div>
+               <div class="second-b">
+                B
+            </div>
+           </div>
+
+       </div>
+
+
+
+    </div>
+</body>
+</html>
